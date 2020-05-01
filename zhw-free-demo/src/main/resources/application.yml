@@ -3,3 +3,14 @@ logging:
     root: info
   file:
     path: ./logs
+
+spring:
+  redis:
+    cluster:
+      nodes: 192.168.199.165:6391,192.168.199.165:6392,192.168.199.165:6393,192.168.199.165:6394,192.168.199.165:6395,192.168.199.165:6396
+      max-redirects: 3
+    lettuce:
+      pool:
+        max-active: 32
+        min-idle: 8
+        max-wait: 10000
