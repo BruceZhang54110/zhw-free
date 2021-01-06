@@ -1,0 +1,9 @@
+spring:
+    application:
+        # 应用名称
+        name: zhw-free-es
+logging:
+    level:
+        root: info
+    file:
+        path: ./logs
