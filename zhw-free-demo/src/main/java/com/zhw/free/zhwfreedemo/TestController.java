@@ -1,7 +1,9 @@
 package com.zhw.free.zhwfreedemo;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.zhw.free.zhwfreedemo.eneity.TOrder;
 import com.zhw.free.zhwfreedemo.eneity.User;
+import com.zhw.free.zhwfreedemo.mapper.TOrderMapper;
 import com.zhw.free.zhwfreedemo.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,8 @@ public class TestController {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private TOrderMapper tOrderMapper;
 
 
     @RequestMapping("test")
@@ -31,6 +35,8 @@ public class TestController {
         for (User o : users) {
             log.info(o.getEmail());
         }
+        QueryWrapper<TOrder> queryWrapper = new QueryWrapper<TOrder>();
+        tOrderMapper.selectList(queryWrapper);
         return "success";
     }
 }

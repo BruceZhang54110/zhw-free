@@ -19,5 +19,17 @@ spring:
     url: jdbc:mysql://localhost:3306/zhw-free?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
     username: root
     password: 123456
+  rabbitmq:
+    addresses: 81.70.194.5:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 15000
 
-
+server:
+  servlet:
+    context-path: /
+  port: 8001
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
