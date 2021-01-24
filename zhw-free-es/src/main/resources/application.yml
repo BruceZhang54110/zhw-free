@@ -2,6 +2,22 @@ spring:
     application:
         # 应用名称
         name: zhw-free-es
+    rabbitmq:
+        # rabbitmq 基本配置
+        addresses: 81.70.194.5:5672
+        username: admin
+        password: admin
+        virtual-host: /
+        connection-timeout: 15000
+        # rabbitmq 消费者监听配置
+        listener:
+            simple:
+                concurrency: 5 # 消费端的监听个数(即@RabbitListener开启几个线程去处理数据。)
+                max-concurrency: 10 #最大并发
+                acknowledge-mode: manual # 签收模式
+                prefetch: 1 # 消费端限流 ，每个线程最多取一个数据
+
+
 logging:
     level:
         root: info

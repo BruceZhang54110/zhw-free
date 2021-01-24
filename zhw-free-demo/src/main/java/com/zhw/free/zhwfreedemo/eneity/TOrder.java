@@ -2,12 +2,14 @@ package com.zhw.free.zhwfreedemo.eneity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class TOrder {
+public class TOrder implements Serializable {
     private int id;
 
     private String name;
 
-    private String messageId;
+    private String messageId; // 存储消息的唯一标识
 
 }
