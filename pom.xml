@@ -6,6 +6,8 @@
     <modules>
         <module>zhw-free-demo</module>
         <module>zhw-free-es</module>
+        <module>zhw-free-client</module>
+        <module>zhw-free-service</module>
     </modules>
     <groupId>com.zhw.free</groupId>
     <artifactId>zhw-free</artifactId>
@@ -65,6 +67,16 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>3.3.1.tmp</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-core</artifactId>
+                <version>10.2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-gson</artifactId>
+                <version>10.2.3</version>
             </dependency>
         </dependencies>
 
