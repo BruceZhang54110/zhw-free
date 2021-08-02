@@ -28,6 +28,22 @@ spring:
     password: admin
     virtual-host: /
     connection-timeout: 15000
+  kafka:
+    bootstrap-servers: 192.168.1.4:9092,192.168.1.4:9093,192.168.1.4:9094
+    producer:
+      ## 发送消息失败时的重试次数
+      retries: 0
+      ## 批量发送数据的配置
+      batch-size: 16384
+      ## 设置kafka生产者缓存区大小
+      buffer-memory: 33554432
+      ## kafka消息序列化
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      ## 0: 生产者成功写入消息之前不会等待任何来自服务器的响应
+      ## 1： 只要集群的leader节点收到消息，生产者就会收到来自服务器的成功响应
+      ## -1： 表示分区leader必须等待消息被成功写入所有的ISR副本(同步副本) 中才认为pruducer请求成功。这种方案提过最高的消息可靠性保证，但是理论上吞吐率也是最差的。
+      acks: -1
 
 server:
   servlet:
@@ -36,3 +52,5 @@ server:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+## kafka
