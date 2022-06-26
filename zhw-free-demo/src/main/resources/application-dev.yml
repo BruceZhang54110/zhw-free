@@ -46,6 +46,7 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       enable-auto-commit: false
       auto-commit-interval: 100
+      max-poll-records: 1000
 server:
   servlet:
     context-path: /

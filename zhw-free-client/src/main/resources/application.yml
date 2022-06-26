@@ -1,0 +1,5 @@
+spring:
+    application:
+        name: zhw-free-client
+server:
+    port: 8080

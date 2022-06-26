@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: zhw-free-demo
@@ -9,3 +10,6 @@ spring:
         server-addr: 127.0.0.1:8848
         username: nacos
         password: nacos
+        enabled: false
+server:
+  port: 8081
