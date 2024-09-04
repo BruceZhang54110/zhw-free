@@ -1,43 +1,44 @@
 package com.zhw.free.zhwfreedemo.controller;
 
-import com.zhw.free.zhwfreedemo.mapper.TOrderMapper;
-import com.zhw.free.zhwfreedemo.mapper.UserMapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.zhw.free.zhwfreedemo.eneity.UserInfo;
+import com.zhw.free.zhwfreedemo.mapper.UserInfoMapper;
+import com.zhw.free.zhwfreedemo.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Slf4j
 @Controller
 @RefreshScope
-@RequestMapping("/ssss")
+@RequestMapping("/test")
 public class TestController {
 
     @Autowired
-    RedisTemplate redisTemplate;
+    private UserInfoMapper userInfoMapper;
 
     @Autowired
-    private UserMapper userMapper;
-    @Autowired
-    private TOrderMapper tOrderMapper;
+    private UserInfoService userInfoService;
 
 
     @ResponseBody
-    @RequestMapping("/test")
+    @RequestMapping("/test1")
     public String test() {
-        // redisTemplate.opsForValue().set("testaaa", "test zhw");
-        // log.info((String) redisTemplate.opsForValue().get("testaaa"));
-        /*QueryWrapper<User> wrapper = new QueryWrapper<User>();
-        List<User> users = userMapper.selectList(wrapper);
-        for (User o : users) {
-            log.info(o.getEmail());
-        }
-        QueryWrapper<TOrder> queryWrapper = new QueryWrapper<TOrder>();
-        tOrderMapper.selectList(queryWrapper);*/
-        //return "success：" + useLocalCache;
-        return null;
+        QueryWrapper<UserInfo> wrapper = new QueryWrapper<UserInfo>();
+        List<UserInfo> UserInfos = userInfoMapper.selectList(wrapper);
+        return "success";
+    }
+
+
+    @PostMapping("/users")
+    public String getUser() {
+        userInfoService.getUsers(4);
+        return "success";
     }
 }

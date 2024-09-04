@@ -1,8 +1,7 @@
 package com.zhw.free.zhwfreedemo;
 
-import com.zhw.free.zhwfreedemo.eneity.TOrder;
-// import com.zhw.free.zhwfreedemo.producer.OrderSender;
 import com.zhw.free.zhwfreedemo.feign.TestFeignInterface;
+import com.zhw.free.zhwfreedemo.pojo.TOrder;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.zhw.free.zhwfreedemo.producer;
 
-import com.zhw.free.zhwfreedemo.eneity.TOrder;
+import com.zhw.free.zhwfreedemo.pojo.TOrder;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.MessageConverter;

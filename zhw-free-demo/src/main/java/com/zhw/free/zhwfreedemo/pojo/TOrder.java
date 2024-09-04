@@ -1,4 +1,4 @@
-package com.zhw.free.zhwfreedemo.eneity;
+package com.zhw.free.zhwfreedemo.pojo;
 
 import lombok.Data;
 

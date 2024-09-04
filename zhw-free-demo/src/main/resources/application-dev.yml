@@ -1,9 +1,13 @@
 logging:
   level:
     root: info
+    com:
+      zhw:
+        free:
+          zhwfreedemo:
+            mapper: debug
   file:
     path: ./logs
-
 spring:
   redis:
     cluster:
@@ -16,9 +20,18 @@ spring:
         max-wait: 10000
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/zhw-free?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/demo_test?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
     username: root
-    password: 123456
+    password: 1234567890
+    druid:
+      initial-size: 5
+      min-idle: 3
+      max-active: 10
+      max-wait: 600
+      validation-query: select 1
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
   rabbitmq:
     addresses: 81.70.194.5:5672
     username: admin
@@ -53,4 +66,6 @@ server:
   port: 8001
 mybatis-plus:
   configuration:
+    map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
