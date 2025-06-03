@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,10 +37,10 @@ public class TestController {
         return "success";
     }
 
-
-    @PostMapping("/users")
-    public String getUser() {
-        userInfoService.getUsers(4);
+    @ResponseBody
+    @RequestMapping("/users/{id}")
+    public String getUser(@PathVariable(value = "id") int id) {
+        List<UserInfo> users = userInfoService.getUsers(id);
         return "success";
     }
 }

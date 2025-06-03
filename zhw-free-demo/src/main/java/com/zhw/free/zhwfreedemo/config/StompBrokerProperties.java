@@ -6,9 +6,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 
-@ConfigurationProperties(prefix = "stomp-broker")
-@Configuration
-@Data
+//@ConfigurationProperties(prefix = "stomp-broker")
+//@Configuration
+//@Data
 public class StompBrokerProperties {
 
     private String relayHost = "127.0.0.1";

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@EnableFeignClients("com.zhw.free.zhwfreedemo.feign")
+//@EnableFeignClients("com.zhw.free.zhwfreedemo.feign")
 @SpringBootApplication
 @EnableTransactionManagement
 @MapperScan("com.zhw.free.zhwfreedemo.mapper")

@@ -1,3 +1,4 @@
+/*
 package com.zhw.free.zhwfreedemo.config;
 
 
@@ -22,11 +23,13 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 import javax.annotation.Resource;
 import java.security.Principal;
 
+*/
 /**
  * websocket config
  * extends AbstractSessionWebSocketMessageBrokerConfigurer<Session>
  * implements WebSocketMessageBrokerConfigurer
- */
+ *//*
+
 @Slf4j
 //@EnableConfigurationProperties({StompBrokerProperties.class})
 //@EnableWebSocketMessageBroker
@@ -35,11 +38,13 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Resource
     private StompBrokerProperties stompBrokerProperties;
-    /**
+    */
+/**
      *
      *  注册websocket-stomp 服务地址
      *  @param registry
-     */
+     *//*
+
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("websocket")
@@ -48,10 +53,12 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 
 
-    /**
+    */
+/**
      * 配置订阅接口地址
      * @param messageBrokerRegistry
-     */
+     *//*
+
     @Override
     public void configureMessageBroker(MessageBrokerRegistry messageBrokerRegistry) {
         log.info("WebSocketMessageBrokerConfigurer configureMessageBroker init start");
@@ -83,10 +90,12 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registration.interceptors(myChannelInterceptor());
     }
 
-    /**
+    */
+/**
      * 鉴权拦截器
      * @return
-     */
+     *//*
+
     private ChannelInterceptor myChannelInterceptor() {
         return new ChannelInterceptor() {
             @Override
@@ -112,11 +121,13 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
         private String wsToken;
 
-        /**
+        */
+/**
          * Returns the name of this principal.
          *
          * @return the name of this principal.
-         */
+         *//*
+
         @Override
         public String getName() {
             return wsToken;
@@ -124,3 +135,4 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     }
 
 }
+*/

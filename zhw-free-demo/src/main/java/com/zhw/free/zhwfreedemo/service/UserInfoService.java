@@ -9,4 +9,7 @@ public interface UserInfoService {
     List<UserInfo> getUsers(Integer id);
 
     UserInfo getById(Integer id);
+
+    int addUser(String name);
+    void addUserException(String name);
 }
